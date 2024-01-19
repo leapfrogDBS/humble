@@ -1,0 +1,369 @@
+/*!
+Theme Name: Humble
+Theme URI: https://www.leapfrogdbs.co.uk/
+Author: Leapfrog Digital Business Solutions
+Author URI: https://www.leapfrogdbs.co.uk/
+Description: A Custom Wordpress Theme for Humble built by LEapfrog DBS
+Version: 1.0.7
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: humble
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+	font-feature-settings: 'lnum';
+	-moz-font-feature-settings: 'lnum=1';
+	-ms-font-feature-settings: 'lnum';
+	-webkit-font-feature-settings: 'lnum';
+	-o-font-feature-settings: 'lnum';
+	scroll-padding-top: 100px; /* adjust this value to your needs */
+	scroll-behavior: smooth;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+/* Generic */
+
+section {
+	@apply  bg-cover bg-center relative;
+}
+
+.container {
+	@apply mx-auto px-8 sm:px-16 py-8 sm:py-16 lg:py-20 max-w-none;
+}
+.container-xs {
+	@apply lg:px-0 max-w-3xl mx-auto;
+}
+
+.container-small {
+	@apply lg:px-0 max-w-4xl;
+}
+
+.container-wide{
+	@apply xl:px-0 max-w-5xl ;
+}
+
+.container-widest {
+	@apply max-w-7xl;
+}
+
+.container-xl {
+	@apply max-w-screen-2xl;
+}
+.container-full {
+	@apply w-full p-0 max-w-none;
+	
+	.row {
+		@apply gap-0;
+		.col {
+			@apply h-full flex flex-col items-center relative px-16 py-12 lg:p-28 bg-cover;
+			
+		}
+	}
+	
+}
+.row {
+	&.first,
+	&.third {
+		@apply lg:grid-cols-2 xl:grid-cols-3;
+	}
+	&.first {
+		
+		.col:nth-child(even):not(.order-1), .col:nth-child(odd).order-2 {
+			@apply xl:col-span-2;
+		}
+	}
+	&.third {
+		.col:nth-child(odd):not(.order-2), .col:nth-child(even).order-1 {
+			@apply xl:col-span-2;
+		}
+	}
+	&.forth {
+		@apply lg:grid-cols-2 xl:grid-cols-10;
+
+		.col:nth-child(odd):not(.order-2), .col:nth-child(even).order-1 {
+			@apply xl:col-span-8;
+		}
+		.col:nth-child(even):not(.order-1), .col:nth-child(odd).order-2 {
+			@apply xl:col-span-2;
+		}
+	}
+}
+
+/* Fonts */
+.superSize {
+	@apply text-8xl font-bold lg:text-9xl;
+}
+
+.headingOne {
+	@apply text-5xl sm:text-7xl lg:text-[80px] leading-tight lg:leading-tight;
+}
+.headingTwo {
+	@apply text-4xl sm:text-5xl lg:text-[50px] leading-tight ;
+}
+.headingThree {
+	@apply text-4xl lg:text-[40px];
+}
+.headingFour {
+	@apply text-2xl leading-snug;
+}
+.headingFive {
+	@apply text-xl leading-snug;
+}
+
+
+.row:not(:first-child) {
+	@apply mt-6;
+}
+.testimonial-text p {
+	@apply text-lg mb-6 font-normal text-center;
+}
+
+#home-agile-training {
+	background-image: url(./assets/images/agile-training.jpg);
+	background-size: cover;
+}
+
+#home-agile-leadership {
+	background-image: url(./assets/images/agile-leadership.jpg);
+	background-size: cover;
+}
+
+/* Image Slider */
+
+.swiper-pagination-bullet {
+	@apply w-7 h-7 bg-gray-300 border border-gray-300 mr-12 opacity-100;
+}
+
+.swiper-pagination-bullet-active {
+	@apply w-9 h-9;
+}
+.swiper-pagination-bullet-active {
+	background: none !important;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+	display: none;
+}
+
+/* Mobile Hambuger Menu animation */
+
+.change .hamburger .bar:nth-child(1) {
+	transform: rotate(-45deg) translateY(12px) translateX(0px);
+}
+
+.change .hamburger .bar:nth-child(2) {
+	opacity: 0;
+}
+
+.change .hamburger .bar:nth-child(3) {
+	transform: rotate(45deg) translateY(-12px) translateX(0px);
+}
+
+
+/* Buttons */
+.standard-button {	
+	@apply text-sm py-2 px-4 sm:text-base text-center leading-normal border font-bold uppercase md:min-w-[300px];
+}
+.standard-button {	
+	letter-spacing: 0.12em;
+	border-radius: 10px;
+}
+
+
+/* Copy */
+.intro-copy {
+	p {
+		@apply mt-6 lg:mt-8;
+	}
+}
+.copy {
+	*:not(:first-child) {
+		@apply mt-6;
+	}
+	p {
+		@apply text-left;
+	}
+	p, li{
+		@apply font-medium text-lg; 
+	}
+	
+	&.semibold p {
+		@apply font-semibold;
+	}
+	ul {
+		@apply list-disc mb-6 list-outside ml-12;
+
+		li {
+			@apply mb-2 mt-0 leading-snug;
+		}
+	}
+	a {
+		@apply underline;
+	}
+	h1 {
+		@apply headingOne;
+	}
+	h2 {
+		@apply headingTwo;
+	}
+	h3 {
+		@apply headingThree;
+	}
+	h4 {
+		@apply headingFour;
+	}
+	h5 {
+		@apply headingFive font-medium;
+	}
+}
+
+.copy ul li {
+	margin-top: 0 !important;
+}
+
+.wp-block-quote {
+	line-height: 1.5;
+	border-left: solid 2px #FF2E5C;
+	padding: 10px 20px;
+	em {
+		font-size: 24px;
+	}
+}
+.wp-block-image img {
+	margin: auto;
+}
+
+.tt-widget iframe {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+.swiper-container {
+	width: 100%;
+	height: 100%;
+  }
+  
+  .swiper-container .swiper-slide {
+	height: auto;
+  }
+  
+.pagination .current {
+	@apply font-semibold text-electric-pink;
+}
+
+.modal-content {
+  -webkit-transition: opacity .4s;
+  transition: opacity .4s;
+  opacity: 0;
+}
+
+.modal-content a {
+  text-decoration-line: none !important;
+}
+
+.modal:not(.hidden) .modal-content {
+  opacity: 1;
+  -webkit-transition: opacity .4s;
+  transition: opacity .4s;
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100%;
+}
+
+#mobile-menu .current_page_item a {
+  color:#FF2E5C;
+}
+.heading-component span {
+	position: relative;
+}
+.heading-component span::before, .heading-component span::after {
+	z-index: -1;
+}
+
+.step-c	ontainer img text {
+	font-family: Raleway, sans-serif !important;
+}
+
+// Common stlyes for :before and :after elements on the headings.
+.heading-component span::before, .heading-component span::after, .heading-component::before, .heading-component::after {
+	content: "";
+	display: inline-block;
+	background-size: cover;
+	position: absolute;
+}
+
+@media only screen and (max-width: 980px) {
+	.heading-component span::before, .heading-component span::after, .heading-component::before, .heading-component::after {
+		display: none !important;
+	}
+}
+
+.bg-image-col.order-1 img {
+	@apply lg:object-left;
+}
+.bg-image-col:not(.order-1) img {
+	@apply lg:object-right;
+}
+
+
+/* Cookie Notice Styles */
+.cookie-notice-container {
+	font-family: Raleway, sans-serif;
+	font-size: 15px;
+	font-weight: 500;
+	.cookie-button {
+		font-family: Raleway, sans-serif;
+		background: #05053d;
+		color: #fff;
+		padding-top: 0.5rem;
+    	padding-bottom: 0.5rem;
+    	padding-left: 1rem;
+    	padding-right: 1rem;
+    	text-align: center;
+		letter-spacing: .12em;
+		border-radius: 10px;
+		font-weight: 700;
+    	text-transform: uppercase;
+		font-size: 13px;
+	}
+}
+
+.countdown {
+	.countdown-item {
+		@apply gap-y-2;
+		.value {
+			@apply headingThree;
+		}
+		.unit {
+			@apply headingFive;
+		}
+	}
+	.divider {
+		@apply mx-2 text-electric-pink headingTwo;
+	}
+}
+.register-button {
+	@apply inline-block py-2 px-8 text-white hover:bg-white text-[16px] lg:text-[24px] text-center leading-normal border font-bold uppercase max-w-[600px] mx-auto;
+	letter-spacing: 0.12em;
+	border-radius: 10px;
+}
+.custom-shadow {
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2), 0px -8px 15px rgba(0, 0, 0, 0.2);
+}
+
