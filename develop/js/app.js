@@ -85,12 +85,12 @@ document.addEventListener('DOMContentLoaded', function () {
   var spacers = document.querySelectorAll('.spacer-component');
   if (window.innerWidth <= 600) {
       spacers.forEach(function(spacer) {
-          var height = spacer.style.height.replace('px', '');
-          spacer.style.height = (height / 2) + 'px';
+          var originalHeight = parseInt(spacer.getAttribute('data-original-height'));
+          spacer.style.height = (originalHeight / 2) + 'px';
       });
   } else {
       spacers.forEach(function(spacer) {
-          var originalHeight = spacer.getAttribute('data-original-height');
+          var originalHeight = parseInt(spacer.getAttribute('data-original-height'));
           if (originalHeight) {
               spacer.style.height = originalHeight + 'px';
           }

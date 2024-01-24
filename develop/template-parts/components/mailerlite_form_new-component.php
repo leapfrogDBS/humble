@@ -75,7 +75,7 @@
     }
    
 ?>
-<div class="w-full max-w-lg rounded-md py-6 px-4" style="<?php echo $bg_style; ?> <?php echo $row_style; ?>">
+<div class="w-full max-w-lg rounded-md py-6 px-4 m-auto" style="<?php echo $bg_style; ?> <?php echo $row_style; ?>">
 <form class="w-full" id="mailerlite-subscribe-form" data-group-number="<?php echo $mailerlite_group_id; ?>" data-form-name="<?php echo $form_name; ?>">
     <div class="background-overlay absolute inset-0 pointer-events-none" style="<?php echo $bg_overlay_style; ?>"></div>
     <div class="mb-6">

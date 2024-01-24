@@ -4,7 +4,7 @@ Theme URI: https://www.leapfrogdbs.co.uk/
 Author: Leapfrog Digital Business Solutions
 Author URI: https://www.leapfrogdbs.co.uk/
 Description: A Custom Wordpress Theme for Humble built by LEapfrog DBS
-Version: 1.0.7
+Version: 1.0.8
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -107,13 +107,13 @@ section {
 }
 
 .headingOne {
-	@apply text-5xl sm:text-7xl lg:text-[80px] leading-tight lg:leading-tight;
+	@apply text-4xl sm:text-7xl lg:text-[80px] leading-tight lg:leading-tight;
 }
 .headingTwo {
 	@apply text-4xl sm:text-5xl lg:text-[50px] leading-tight ;
 }
 .headingThree {
-	@apply text-4xl lg:text-[40px];
+	@apply text-3xl md:text-4xl lg:text-[40px];
 }
 .headingFour {
 	@apply text-2xl leading-snug;
@@ -367,3 +367,12 @@ section {
 	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2), 0px -8px 15px rgba(0, 0, 0, 0.2);
 }
 
+
+
+#page > section:first-of-type > .container > .row:first-of-type {
+	@apply mt-16 mb-0 md:my-16;
+	.admin-bar  & {
+		@apply  mt-6;
+	}
+
+}

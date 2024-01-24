@@ -11,7 +11,7 @@ if ($text_color) {
 } else {
     $row_style = 'color: #fff;';
 }
-$row_classes .= 'row mx-auto mt-16 mb-0 md:my-16 relative z-40 py-12 lg:pb-0';
+$row_classes .= 'row mx-auto relative z-40 py-12 lg:pb-0';
 
 echo '<div class="' . $row_classes . '" style="' . $row_style . '">';
 ?>
