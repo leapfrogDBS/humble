@@ -175,7 +175,7 @@ section {
 
 /* Buttons */
 .standard-button {	
-	@apply text-sm py-2 px-4 sm:text-base text-center leading-normal border font-bold uppercase md:min-w-[300px];
+	@apply text-sm py-2 px-4 sm:text-base text-center leading-normal border font-bold uppercase;
 }
 .standard-button {	
 	letter-spacing: 0.12em;
