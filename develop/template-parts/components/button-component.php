@@ -104,7 +104,10 @@ switch ($link_to) {
 #<?php echo $button_id; ?>:hover {
     background-color: #ffffff !important;
     <?php if ($button_colour): ?>
-    color: <?php echo $button_colour; ?> !important;
+        <?php if ($button_colour != "#ffffff"): ?>
+            color: <?php echo $button_colour; ?> !important;
+        <?php endif; ?>
+
     <?php else: ?>
     color: <?php echo $fallbackTextColour; ?> !important;
     <?php endif; ?>

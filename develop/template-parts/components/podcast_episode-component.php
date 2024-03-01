@@ -61,7 +61,7 @@
         }
     ?>
         <div class ="btn-container w-full text-center mt-8 mb-6 block">
-            <a href="https://leadingwithagility.buzzsprout.com/share" target="_blank"  class="standard-button <?php echo $colour_classes; ?>">
+            <a href="https://leadingwithagility.buzzsprout.com/share" target="_blank"  class="standard-button group  hover:bg-white <?php echo $colour_classes; ?>">
                 <span id="event-button">Subscribe</span>
                 <i class="fa-solid fa-chevron-right ml-4 group-hover:rotate-90 transition-transform duration-200"></i>
             </a>              
