@@ -128,6 +128,7 @@ $email_address = get_field('email_address', 'option');
 
         var form = event.target; // Reference to the form
         var data = new FormData(form); // This will capture all the form data
+        data.append("_wpcf7_unit_tag", "data.form_id");
         
         // Extract the Contact Form 7 ID from the ACF field
         var shortcode = '<?php echo get_field("contact_form_shortcode"); ?>'; // Replace with the correct ACF field name
@@ -135,7 +136,7 @@ $email_address = get_field('email_address', 'option');
         var match = shortcode.match(/id="(\d+)"/);
         var formId = match ? match[1] : ''; // Extracted form ID
 
-        fetch('<?php echo home_url(); ?>/wp-json/contact-form-7/v1/contact-forms/' + formId + '/feedback', {
+        fetch('<?php echo home_url(); ?>/wp-json/contact-form-7/v1/contact-forms/10/feedback', {
             method: 'POST',
             body: data
         }).then(function(response) {
