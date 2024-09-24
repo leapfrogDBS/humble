@@ -20,7 +20,7 @@
                     <h3 class="headingFour font-semibold"><?php echo $wyl_heading; ?></h3>
                 <?php endif;
                 if($wyl_text) : ?>
-                    <p class="text-[15px] mt-2"><?php echo $wyl_text; ?></p>
+                    <div class="step-content mt-2"><?php echo $wyl_text; ?></div>
                 <?php endif; ?>
             </div>
         </div>

@@ -376,3 +376,23 @@ section {
 	}
 
 }
+
+/* Steps */
+.step-content {
+	@apply space-y-2;
+	p {
+		@apply text-[15px];
+	}
+	ul, ol {
+		@apply list-inside space-y-1 text-[15px];
+	}
+	ul {
+		@apply list-disc;
+	}
+	ol {
+		@apply list-decimal;
+	}
+	h1, h2, h3, h4, h5 {
+		@apply headingFive font-semibold;
+	}
+}
